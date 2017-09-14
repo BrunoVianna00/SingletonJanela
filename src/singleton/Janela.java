@@ -3,8 +3,7 @@ package singleton;
 
 
 public class Janela {
-    private String nomeJanela;
-    private String cor;
+    private boolean x;
     private static Janela instancia; 
     
     private Janela(){
@@ -12,6 +11,7 @@ public class Janela {
     }
     public static Janela getInstance(){
         if (instancia == null){
+            
             instancia = new Janela();
         }
         return instancia;
@@ -19,29 +19,12 @@ public class Janela {
 
     
     public void abrir() {
-       
-        System.out.println("Abrindo janela");
+       x = true;
+        System.out.println("Abrindo janela " + x);
 }
     public void fechar(){
-        System.out.println("Fechando janela");
+        x=false;
+        System.out.println("Fechando janela " + x);
     }
 
-    
-    public String getNomeJanela() {
-        return nomeJanela;
-    }
-
-    
-    public void setNomeJanela(String nomeJanela) {
-        this.nomeJanela = nomeJanela;
-    }
-
-    public String getCor() {
-        return cor;
-    }
-
-    public void setCor(String cor) {
-        this.cor = cor;
-    }
-    
 }
